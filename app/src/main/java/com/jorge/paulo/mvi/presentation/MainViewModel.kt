@@ -24,6 +24,7 @@ class MainViewModel @Inject constructor(
 
     init {
         handlerIntent()
+
     }
 
     private fun handlerIntent() {
