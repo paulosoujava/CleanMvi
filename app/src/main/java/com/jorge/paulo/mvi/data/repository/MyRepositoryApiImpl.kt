@@ -3,11 +3,11 @@ package com.jorge.paulo.mvi.data.repository
 
 import com.jorge.paulo.mvi.data.remote.MyApi
 import com.jorge.paulo.mvi.domain.models.Animal
-import com.jorge.paulo.mvi.domain.repository.MyRepository
+import com.jorge.paulo.mvi.domain.repository.MyRepositoryApi
 
-class MyRepositoryImpl(
+class MyRepositoryApiImpl(
     private val api: MyApi
-): MyRepository {
+): MyRepositoryApi {
     override suspend fun doNetWorkCall():List<Animal> {
         return api.getAnimals().map { it.toAnimal() }
     }

@@ -3,6 +3,7 @@ package com.jorge.paulo.mvi.presentation
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.jorge.paulo.mvi.domain.models.Animal
 import com.jorge.paulo.mvi.domain.use_case.GetAnimalUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
@@ -39,7 +40,9 @@ class MainViewModel @Inject constructor(
         viewModelScope.launch {
             state.value = MainState.Loading
             state.value = try {
-                MainState.Animals(useCase())
+                MainState.Animals(
+                    useCase()
+                )
             } catch (e: Exception) {
                 MainState.Error(e.message)
             }

@@ -6,7 +6,7 @@ import retrofit2.http.GET
 
 
 data class Animal(
+    val uid: Int = 0,
     val name: String = "",
-    val location: String = "",
     val image: String = "",
 )
